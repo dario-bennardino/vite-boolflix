@@ -20,6 +20,22 @@ import CardSerie from './components/partials/CardSerie.vue';
     methods:{
       getApi(){
         console.log('get api');
+        axios.get(this.store.apiUrlMovie, {
+          params:{
+            title:'',
+            original_title:'',
+            original_language:'',
+            vote_average:'',
+
+          }
+        })
+        .then(result => {
+          console.log(result.data.results);
+          this.store.filmList = result.data.results;
+        })
+        .catch(error => {
+          console.log(error);
+        })
       }
     },
     mounted(){

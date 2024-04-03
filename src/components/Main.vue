@@ -9,7 +9,7 @@ import CardSerie from './partials/CardSerie.vue';
         },
         data(){
             return{
-
+                store
             }
         }
     }
@@ -25,7 +25,7 @@ import CardSerie from './partials/CardSerie.vue';
         <h3>Serie</h3>
             <div class="row row-cols-4">
                 <CardSerie />
-                
+
             </div>
     </div>
 </template>
