@@ -1,17 +1,31 @@
 <script>
+import { store } from '../data/store'
     export default {
-        
+        data(){
+            return{
+
+            }
+        }
     }
 </script>
 
 <template>
-    <div>
-        Header
-    </div>
+    <div class="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 d-flex justify-content-between">
+            <a class="navbar-brand" href="#">Boolflix</a>
+
+            <form class="form-inline my-2 my-lg-0 ml-auto d-flex">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>    
 </template>
 
 
 
 <style lang="scss" scoped>
-
+    a{
+        font-size: 2rem;
+    }
 </style>
