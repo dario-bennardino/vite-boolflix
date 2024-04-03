@@ -2,6 +2,12 @@
 import { store } from '../../data/store'
     export default {
         props:{
+          title: String,
+          original_title: String,
+          original_language: String,
+          vote_average: String,
+          poster_path: String,
+
 
         }
     }
@@ -13,12 +19,13 @@ import { store } from '../../data/store'
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="" alt="Avatar" style="width:300px;height:300px;">
+                    <img :src="poster_path" :alt="title" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>John Doe</h1>
-                    <p>Architect & Engineer</p>
-                    <p>We love that guy</p>
+                    <h1>{{ title }}</h1>
+                    <p>titolo originale</p>
+                    <p>lingua</p>
+                    <p>voto</p>
                 </div>
             </div>
         </div>
