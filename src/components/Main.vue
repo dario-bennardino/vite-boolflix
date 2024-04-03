@@ -19,7 +19,7 @@ import CardSerie from './partials/CardSerie.vue';
     <div class="container text-center" >
         <h3>Film</h3>
             <div class="row row-cols-4">
-                <CardFilm />
+                <CardFilm v-for="(carte, index) in store.filmList" :key="index" />
                 
             </div>
         <h3>Serie</h3>

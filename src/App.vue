@@ -32,6 +32,7 @@ import CardSerie from './components/partials/CardSerie.vue';
         .then(result => {
           console.log(result.data.results);
           this.store.filmList = result.data.results;
+          console.log(this.store.filmList);
         })
         .catch(error => {
           console.log(error);
