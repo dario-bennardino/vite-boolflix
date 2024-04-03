@@ -27,5 +27,8 @@ import { store } from '../data/store'
 <style lang="scss" scoped>
     a{
         font-size: 2rem;
+        font-weight: bold;
+        color: #E70000;
     }
+
 </style>

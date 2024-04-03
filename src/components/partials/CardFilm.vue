@@ -23,9 +23,9 @@ import { store } from '../../data/store'
                 </div>
                 <div class="flip-card-back">
                     <h1>{{ title }}</h1>
-                    <p>titolo originale</p>
-                    <p>lingua</p>
-                    <p>voto</p>
+                    <p>{{original_title}}</p>
+                    <p>{{ original_language }}</p>
+                    <p>{{ vote_average }}</p>
                 </div>
             </div>
         </div>
