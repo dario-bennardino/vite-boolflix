@@ -14,6 +14,14 @@ import Card from './components/partials/Card.vue';
       return{
         store
       }
+    },
+    methods:{
+      getApi(){
+        console.log('get api');
+      }
+    },
+    mounted(){
+      this.getApi()
     }
   }
 </script>
