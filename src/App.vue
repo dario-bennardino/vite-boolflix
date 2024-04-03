@@ -3,12 +3,14 @@ import axios from 'axios';
 import { store } from './data/store'
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
-import Card from './components/partials/Card.vue';
+import CardFilm from './components/partials/CardFilm.vue';
+import CardSerie from './components/partials/CardSerie.vue';
   export default {
     components:{
       Header, 
       Main,
-      Card,
+      CardFilm,
+      CardSerie,
     },
     data(){
       return{
