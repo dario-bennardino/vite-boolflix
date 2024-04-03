@@ -1,5 +1,8 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-    //elemento che viene restituito dal data, lo vado ad importare nel componente in cui serve e nei suoi data
+    apiUrlMovie: 'https://api.themoviedb.org/3/search/movie',
+    apiUrlTv: 'https://api.themoviedb.org/3/search/tv',
+    filmList: [],
+    tvList: [],
 })
