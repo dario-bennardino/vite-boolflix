@@ -2,11 +2,12 @@
 import { store } from '../../data/store'
     export default {
         props:{
-          title: String,
-          original_title: String,
-          original_language: String,
-          vote_average: String,
-          poster_path: String,
+          // title: String,
+          // original_title: String,
+          // original_language: String,
+          // vote_average: String,
+          // poster_path: String,
+          cardObj: Object,
 
 
         }
@@ -19,13 +20,13 @@ import { store } from '../../data/store'
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img :src="poster_path" :alt="title" style="width:300px;height:300px;">
+                    <img :src="poster_path" :alt="cardObj.title || cardObj.name" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>{{ title }}</h1>
-                    <p>{{original_title}}</p>
-                    <p>{{ original_language }}</p>
-                    <p>{{ vote_average }}</p>
+                    <h1>{{ cardObj.title || cardObj.name }}</h1>
+                    <p>{{ cardObj.original_title || cardObj.original_name }}</p>
+                    <p>{{ cardObj.original_language }}</p>
+                    <p>{{ cardObj.vote_average }}</p>
                 </div>
             </div>
         </div>

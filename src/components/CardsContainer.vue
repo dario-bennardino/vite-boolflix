@@ -1,13 +1,13 @@
 <script>
 import { store } from '../data/store'
-import CardFilm from './partials/CardFilm.vue';
+import Card from './partials/Card.vue';
 import CardSerie from './partials/CardSerie.vue';
     export default {
         props:{
             // type: String
         },
         components:{
-            CardFilm,
+            Card,
             CardSerie,
         },
         data(){
@@ -29,13 +29,9 @@ import CardSerie from './partials/CardSerie.vue';
             <h3 class="p-4">Film</h3>
                 <div class="row row-cols-4">
 
-                    <CardFilm v-for="card in store.filmList" 
+                    <Card v-for="card in store.filmList" 
                     :key="card.id" 
-                    :title="card.title"
-                    :original_title="card.original_title"
-                    :original_language="card.original_language"
-                    :vote_average="card.vote_average"
-                    :poster_path="card.poster_path"
+                    :cardObj="card"
 
                     />
                     

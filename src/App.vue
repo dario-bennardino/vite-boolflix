@@ -3,13 +3,13 @@ import axios from 'axios';
 import { store } from './data/store'
 import SearchBar from './components/SearchBar.vue';
 import CardsContainer from './components/CardsContainer.vue';
-import CardFilm from './components/partials/CardFilm.vue';
+import Card from './components/partials/Card.vue';
 import CardSerie from './components/partials/CardSerie.vue';
   export default {
     components:{
       SearchBar, 
       CardsContainer,
-      CardFilm,
+      Card,
       CardSerie,
     },
     data(){
@@ -42,19 +42,22 @@ import CardSerie from './components/partials/CardSerie.vue';
         .catch(error => {
           console.log(error);
         })
+      },
+      startSearch(){
+        this.getMovies()
+        this.getSeries()
       }
 
     },
     mounted(){
-      this.getMovies()
-      this.getSeries()
+      this.startSearch()
     }
   }
 </script>
 
 <template>
-  <SearchBar />
-  <CardsContainer />
+  <SearchBar @startSearch="startSearch" />
+  <CardsContainer v-if="store.filmList.length > 0" />
 </template>
 
 
