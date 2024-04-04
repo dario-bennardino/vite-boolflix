@@ -3,6 +3,9 @@ import { store } from '../data/store'
 import CardFilm from './partials/CardFilm.vue';
 import CardSerie from './partials/CardSerie.vue';
     export default {
+        props:{
+            // type: String
+        },
         components:{
             CardFilm,
             CardSerie,
@@ -11,16 +14,21 @@ import CardSerie from './partials/CardSerie.vue';
             return{
                 store
             }
-        }
+        },
+        // computed:{
+        //     title(){
+        //         return this.type === 'movie' ? 'Filmmmmm' : 'Serie TV'
+        //     }
+        // }
     }
 </script>
 
 <template>
     <div class="back">
         <div class="container text-center" >
-            <h3>Film</h3>
+            <h3 class="p-4">Film</h3>
                 <div class="row row-cols-4">
-                    
+
                     <CardFilm v-for="card in store.filmList" 
                     :key="card.id" 
                     :title="card.title"
@@ -32,7 +40,7 @@ import CardSerie from './partials/CardSerie.vue';
                     />
                     
                 </div>
-            <h3>Serie</h3>
+            <h3 class="p-4">Serie</h3>
                 <div class="row row-cols-4">
                     <CardSerie />
 

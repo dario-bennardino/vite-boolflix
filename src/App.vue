@@ -47,6 +47,7 @@ import CardSerie from './components/partials/CardSerie.vue';
     },
     mounted(){
       this.getMovies()
+      this.getSeries()
     }
   }
 </script>
