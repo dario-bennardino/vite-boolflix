@@ -57,7 +57,7 @@ import CardSerie from './components/partials/CardSerie.vue';
 
 <template>
   <SearchBar @startSearch="startSearch" />
-  <CardsContainer v-if="store.filmList.length > 0" />
+  <CardsContainer v-if="store.filmList.length > 0 || store.tvList.length > 0" />
 </template>
 
 

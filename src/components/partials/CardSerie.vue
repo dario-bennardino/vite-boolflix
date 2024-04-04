@@ -2,7 +2,7 @@
 import { store } from '../../data/store'
     export default {
         props:{
-
+          cardObj: Object,
         }
     }
 </script>
@@ -12,13 +12,14 @@ import { store } from '../../data/store'
         
         <div class="flip-card">
             <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="" alt="Avatar" style="width:300px;height:300px;">
+              <div class="flip-card-front">
+                    <img :src="poster_path" :alt="cardObj.title || cardObj.name" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>John Doe</h1>
-                    <p>Architect & Engineer</p>
-                    <p>We love that guy</p>
+                    <h1>{{ cardObj.title || cardObj.name }}</h1>
+                    <p>{{ cardObj.original_title || cardObj.original_name }}</p>
+                    <p>{{ cardObj.original_language }}</p>
+                    <p>{{ cardObj.vote_average }}</p>
                 </div>
             </div>
         </div>

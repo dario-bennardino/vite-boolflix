@@ -38,7 +38,11 @@ import CardSerie from './partials/CardSerie.vue';
                 </div>
             <h3 class="p-4">Serie</h3>
                 <div class="row row-cols-4">
-                    <CardSerie />
+                    
+                    <CardSerie v-for="card in store.tvList" 
+                    :key="card.id"
+                    :cardObj="card"
+                    />
 
                 </div>
         </div>
