@@ -20,7 +20,7 @@ import CardSerie from './partials/CardSerie.vue';
         <div class="container text-center" >
             <h3>Film</h3>
                 <div class="row row-cols-4">
-                    <!-- <CardFilm v-for="(carte, index) in store.filmList" :key="index" /> -->
+                    
                     <CardFilm v-for="card in store.filmList" 
                     :key="card.id" 
                     :title="card.title"
@@ -46,5 +46,9 @@ import CardSerie from './partials/CardSerie.vue';
 <style lang="scss" scoped>
     .back{
         background-color: black;
+
+        h3{
+            color: white;
+        }
     }
 </style>

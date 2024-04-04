@@ -1,14 +1,14 @@
 <script>
 import axios from 'axios';
 import { store } from './data/store'
-import Header from './components/Header.vue';
-import Main from './components/Main.vue';
+import SearchBar from './components/SearchBar.vue';
+import CardsContainer from './components/CardsContainer.vue';
 import CardFilm from './components/partials/CardFilm.vue';
 import CardSerie from './components/partials/CardSerie.vue';
   export default {
     components:{
-      Header, 
-      Main,
+      SearchBar, 
+      CardsContainer,
       CardFilm,
       CardSerie,
     },
@@ -18,36 +18,42 @@ import CardSerie from './components/partials/CardSerie.vue';
       }
     },
     methods:{
-      getApi(){
+      getMovies(){
         console.log('get api');
-        axios.get(this.store.apiUrlMovie, {
-          params:{
-            title:'',
-            original_title:'',
-            original_language:'',
-            vote_average:'',
-
-          }
+        axios.get(store.apiUrl + 'movie', {
+          params: store.apiParams
         })
         .then(result => {
           console.log(result.data.results);
-          this.store.filmList = result.data.results;
-          console.log(this.store.filmList);
+          store.filmList = result.data.results;
+          console.log(store.filmList);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      },
+      getSeries(){
+        axios.get(store.apiUrl + 'tv', {
+          params: store.apiParams
+        })
+        .then(result => {
+          store.tvList = result.data.results;
         })
         .catch(error => {
           console.log(error);
         })
       }
+
     },
     mounted(){
-      this.getApi()
+      this.getMovies()
     }
   }
 </script>
 
 <template>
-  <Header />
-  <Main />
+  <SearchBar />
+  <CardsContainer />
 </template>
 
 
