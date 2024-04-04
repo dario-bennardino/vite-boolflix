@@ -20,15 +20,15 @@ import { store } from '../../data/store'
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img :src="poster_path" :alt="cardObj.title || cardObj.name" style="width:300px;height:300px;">
+                    <img :src="`http://image.tmdb.org/t/p/w200${cardObj.poster_path}`" :alt="Avatar">
                 </div>
                 <div class="flip-card-back">
-                    <h1>{{ cardObj.title || cardObj.name }}</h1>
+                    <h4>{{ cardObj.title || cardObj.name }}</h4>
                     <p>{{ cardObj.original_title || cardObj.original_name }}</p>
                     <img class="flag" v-if="cardObj.original_language=='it'" src="/public/assets/img/it.png" alt="it">
                     <img class="flag" v-if="cardObj.original_language=='en'" src="/public/assets/img/en.png" alt="en">
                     <p v-if="cardObj.original_language!='it' && cardObj.original_language!='en' "> {{ cardObj.original_language }} </p>                 
-                    <p>{{ cardObj.vote_average }}</p>
+                    <p>Voto: {{ cardObj.vote_average }}</p>
                 </div>
             </div>
         </div>
