@@ -18,7 +18,9 @@ import { store } from '../../data/store'
                 <div class="flip-card-back">
                     <h1>{{ cardObj.title || cardObj.name }}</h1>
                     <p>{{ cardObj.original_title || cardObj.original_name }}</p>
-                    <p>{{ cardObj.original_language }}</p>
+                    <img class="flag" v-if="cardObj.original_language=='it'" src="/public/assets/img/it.png" alt="it">
+                    <img class="flag" v-if="cardObj.original_language=='en'" src="/public/assets/img/en.png" alt="en">
+                    <p v-if="cardObj.original_language!='it' && cardObj.original_language!='en' "> {{ cardObj.original_language }} </p> 
                     <p>{{ cardObj.vote_average }}</p>
                 </div>
             </div>
@@ -66,5 +68,10 @@ import { store } from '../../data/store'
   background-color: #2980b9;
   color: white;
   transform: rotateY(180deg);
+}
+
+.flag{
+  width: 30px;
+  height: 20px;
 }
 </style>
