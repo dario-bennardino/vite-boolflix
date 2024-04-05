@@ -26,8 +26,11 @@ import { store } from '../../data/store'
                     <img class="flag" v-if="cardObj.original_language=='en'" src="/public/assets/img/en.png" alt="en">
                     <p v-if="cardObj.original_language!='it' && cardObj.original_language!='en' "> {{ cardObj.original_language }} </p> 
                     <!-- <p>Voto: {{ cardObj.vote_average }}</p> -->
-                    <i v-for="star in fullStars(cardObj.vote_average)" :key="star" class="fa-solid fa-star "></i>
-                    <i v-for="star in emptyStars(cardObj.vote_average)" :key="star" class="fa-regular fa-star"></i>
+                    <div>
+                      <i v-for="star in fullStars(cardObj.vote_average)" :key="star" class="fa-solid fa-star "></i>
+                      <i v-for="star in emptyStars(cardObj.vote_average)" :key="star" class="fa-regular fa-star"></i>
+                    </div>  
+                    <h7>{{ cardObj.overview }}</h7>   
                 </div>
             </div>
         </div>
@@ -71,7 +74,7 @@ import { store } from '../../data/store'
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: black;
   color: white;
   transform: rotateY(180deg);
 }

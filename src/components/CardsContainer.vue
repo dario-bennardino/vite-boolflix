@@ -57,6 +57,8 @@ import CardSerie from './partials/CardSerie.vue';
 
         h3{
             color: white;
+            font-size: 2rem;
+            font-weight: bold;
         }
     }
 </style>

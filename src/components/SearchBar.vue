@@ -31,10 +31,35 @@ import { store } from '../data/store'
 
 
 <style lang="scss" scoped>
+
+    .navbar{
+        height: 100px;
+        // background-color: lighten($black, 40%);
+        // background-color: $black;
+        // background-color: black;
+    }
+
     a{
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: bold;
         color: #E70000;
     }
+
+    .navbar-brand:hover {
+        color: #E70000; 
+    }
+
+    .btn-outline-success{
+        color: #E70000;
+    }
+
+    .btn-outline-success:hover{
+        background-color: white;
+    }
+        
+            
+        
+    
+   
 
 </style>
