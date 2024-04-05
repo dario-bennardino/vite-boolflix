@@ -36,7 +36,7 @@ import CardSerie from './partials/CardSerie.vue';
                     />
                     
                 </div>
-            <h3 class="p-4">Serie</h3>
+            <h3 v-if="store.tvList.length > 0" class="p-4">Serie</h3>
                 <div class="row row-cols-4">
                     
                     <CardSerie v-for="card in store.tvList" 

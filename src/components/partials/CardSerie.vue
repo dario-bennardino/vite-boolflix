@@ -3,6 +3,10 @@ import { store } from '../../data/store'
     export default {
         props:{
           cardObj: Object,
+        },
+        methods:{
+          fullStars(vote) { return Math.floor(vote / 2);},
+          emptyStars(vote) { return Math.ceil(5 - (vote /2))}
         }
     }
 </script>
@@ -13,7 +17,7 @@ import { store } from '../../data/store'
         <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                    <img :src="`http://image.tmdb.org/t/p/w200${cardObj.poster_path}`" :alt="Avatar">
+                    <img :src="`http://image.tmdb.org/t/p/w300${cardObj.poster_path}`" :alt="`Locandina ${cardObj.original_title || cardObj.original_name}`" class="card-img">
                 </div>
                 <div class="flip-card-back">
                     <h4>{{ cardObj.title || cardObj.name }}</h4>
@@ -21,7 +25,9 @@ import { store } from '../../data/store'
                     <img class="flag" v-if="cardObj.original_language=='it'" src="/public/assets/img/it.png" alt="it">
                     <img class="flag" v-if="cardObj.original_language=='en'" src="/public/assets/img/en.png" alt="en">
                     <p v-if="cardObj.original_language!='it' && cardObj.original_language!='en' "> {{ cardObj.original_language }} </p> 
-                    <p>Voto: {{ cardObj.vote_average }}</p>
+                    <!-- <p>Voto: {{ cardObj.vote_average }}</p> -->
+                    <i v-for="star in fullStars(cardObj.vote_average)" :key="star" class="fa-solid fa-star "></i>
+                    <i v-for="star in emptyStars(cardObj.vote_average)" :key="star" class="fa-regular fa-star"></i>
                 </div>
             </div>
         </div>
@@ -33,7 +39,7 @@ import { store } from '../../data/store'
 .flip-card {
     background-color: transparent;
     width: 300px;
-    height: 300px;
+    height: 400px;
     perspective: 1000px;
 }
 
@@ -73,5 +79,11 @@ import { store } from '../../data/store'
 .flag{
   width: 30px;
   height: 20px;
+}
+
+.card-img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 </style>
