@@ -56,12 +56,16 @@ import CardSerie from './components/partials/CardSerie.vue';
 </script>
 
 <template>
+
   <SearchBar @startSearch="startSearch" />
   <CardsContainer v-if="store.filmList.length > 0 || store.tvList.length > 0" />
+  
 </template>
 
 
 
 <style lang="scss" scoped>
   @use './assets/scss/main.scss';
+ 
+ 
 </style>

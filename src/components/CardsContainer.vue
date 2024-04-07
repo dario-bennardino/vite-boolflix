@@ -54,11 +54,68 @@ import CardSerie from './partials/CardSerie.vue';
 <style lang="scss" scoped>
     .back{
         background-color: black;
+        min-height: calc(100vh - 100px);
 
         h3{
             color: white;
             font-size: 2rem;
             font-weight: bold;
         }
-    }
+    
+
+        // @media (max-width: 1200px) {
+
+        //     .row.row-cols-4 {
+        //         .col {
+        //             flex: 0 0 33.333333%;
+        //             max-width: 33.333333%;
+        //         }
+        //     }
+        // }
+
+        // @media (max-width: 992px) {
+
+        //     .row.row-cols-4 {
+        //         .col {
+        //             flex: 0 0 50%;
+        //             max-width: 50%;
+        //         }
+        //     }
+        // }
+
+        // @media (max-width: 768px) {
+
+        //     .row.row-cols-4 {
+        //         .col {
+        //             flex: 0 0 100%;
+        //             max-width: 100%;
+        //             justify-content: center;
+        //         }
+        //     }
+        // }
+
+        @media (max-width: 1200px) {
+            .col {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .col {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+
+    }    
+
 </style>

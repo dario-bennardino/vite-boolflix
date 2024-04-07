@@ -57,7 +57,19 @@ import { store } from '../data/store'
         background-color: white;
     }
         
-            
+    @media (max-width: 492px) {
+    .navbar-brand {
+        width: 100%;
+    }
+
+    .navbar{
+        height: 200px;
+
+    }
+
+
+
+}       
         
     
    
